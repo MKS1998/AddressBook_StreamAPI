@@ -96,6 +96,21 @@ public class AddressBookSystem {
 
 	}
 
+	public void deleteDetails() {
+		System.out.println("Confirm the first name of the person to delete contact");
+		String confirmName = sc.next();
+		for (int i = 0; i < arrayDetails.size(); i++) {
+
+			if (arrayDetails.get(i).getFirstName().equals(confirmName)) {
+				arrayDetails.remove(i);
+				System.out.println("List After removing" + arrayDetails);
+
+			} else {
+				System.out.println("Enter valid first name");
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		AddressBookSystem details = new AddressBookSystem();
 		details.addDetails();
@@ -111,6 +126,9 @@ public class AddressBookSystem {
 				break;
 			case 2:
 				details.editDetails();
+				break;
+			case 3:
+				details.deleteDetails();
 				break;
 			default:
 				i = 1;
