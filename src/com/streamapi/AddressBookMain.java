@@ -3,8 +3,8 @@ package com.streamapi;
 import java.util.*;
 
 /**
- * Purpose - Ability to search Person in a City or State across the multiple
- * Address Book
+ * Purpose - Ability to sort the entries in the address book alphabetically by
+ * Person’s name.
  * 
  */
 
@@ -12,27 +12,28 @@ public class AddressBookMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		AddressBook addressBook = new AddressBook();
-		Map<String, AddressBook> addressBookMap = new HashMap<String, AddressBook>();
+		Map<String, AddressBook> addressBookMap = new HashMap<>();
 
 		while (true) {
-			System.out.println("\nWelcome to AddressBook System");
+			System.out.println("\nWelcome to Address Book System");
 			System.out.println(
-					"1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5.View Contact Data \n6.Count Contacts \n7. Exit");
+					"1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5. View Contact Data \n6. Count Contacts \n7. Exit");
 			System.out.print("Enter Your choice: ");
 			int choice = sc.nextInt();
 			sc.nextLine();
 			switch (choice) {
 			case 1:
-				System.out.println("Enter Name of new AddressBook: ");
+				System.out.println("Enter Name of new Address Book: ");
 				String bookName = sc.next();
 				sc.nextLine();
-				addressBookMap.put(bookName, new AddressBook());// adding bookname as a key and vlue is allocating
+				addressBookMap.put(bookName, new AddressBook());
+				// adding bookname as a key and vlue is allocating
 				// memory for addressbook obj
 				AddressBook.addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
 				// passing key of hashmap
 				break;
 			case 2:
-				System.out.println("List of available AddressBook : ");
+				System.out.println("List of available Address Book : ");
 				Set<String> keys = addressBookMap.keySet();// retrived keys from hashmap to show addressbooklist
 				Iterator<String> i = keys.iterator();
 				while (i.hasNext()) {
@@ -60,7 +61,7 @@ public class AddressBookMain {
 				addressBook.countByOption();
 				break;
 			case 7:
-				sc.close();// for closing the program
+				sc.close();// for closing the programme
 				return;
 			default:
 				System.out.println("You Entered Invalid Choice....!");
