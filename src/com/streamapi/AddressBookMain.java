@@ -7,6 +7,7 @@ import java.util.*;
  * Address Book
  * 
  */
+
 public class AddressBookMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -51,7 +52,11 @@ public class AddressBookMain {
 				System.out.println("Welcome to the search option:");
 				addressBook.searchByOptions();
 			case 5:
-				sc.close();// for closing the program
+				System.out.println("Welcome to view By Option:");
+				addressBook.viewByOption(addressBookMap);
+				break;
+			case 6:
+				sc.close();// for closing the programme
 				return;
 			default:
 				System.out.println("You Entered Invalid Choice....!");
